@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
 
     @IBOutlet var nameField: UITextField!
     @IBOutlet var imagesScroll: UIScrollView!
@@ -18,6 +18,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.lightGrayColor()
+        self.nameField.delegate = self
         
         
         let firstSlide = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
@@ -66,6 +67,40 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             print("SECOND PAGE")
             self.pageControl.currentPage = 1
         }
+    }
+
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        print("textFieldShouldReturn: ")
+        textField.resignFirstResponder()
+        return true
+    }
+    
+
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+
+        print("shouldChangeCharactersInRange: "+string)
+        if (string == "a"){
+            self.view.backgroundColor = UIColor.redColor()
+        }
+        else if (string == "e"){
+            self.view.backgroundColor = UIColor.redColor()
+        }
+        else if (string == "i"){
+            self.view.backgroundColor = UIColor.redColor()
+        }
+        else if (string == "o"){
+            self.view.backgroundColor = UIColor.redColor()
+        }
+        else if (string == "u"){
+            self.view.backgroundColor = UIColor.redColor()
+        }
+        else {
+            self.view.backgroundColor = UIColor.lightGrayColor()
+        }
+        
+        return true
 
     }
     
