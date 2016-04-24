@@ -11,15 +11,22 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var nameField: UITextField!
-    
+    var namesArray = Array<String>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func addName(){
-        print("addName: ")
         
+        let name = self.nameField.text
+        if (name?.characters.count == 0){
+            return // nothing entered, ignore
+        }
+        
+        self.namesArray.append(name!)
+        self.nameField.text = "" // clear text field
+        print("addName: \(self.namesArray)")
     }
     
 
