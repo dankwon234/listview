@@ -29,6 +29,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wb-4u-hYo">
                                 <rect key="frame" x="285" y="183" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addName" destination="BYZ-38-t0r" eventType="touchUpInside" id="9rm-oP-SG5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90904186622596983" green="0.82394003196803944" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -40,6 +43,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bbk-HN-599"/>
+                    <connections>
+                        <outlet property="nameField" destination="BHl-9A-C39" id="8qX-et-r1s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
