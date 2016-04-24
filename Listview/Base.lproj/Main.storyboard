@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Listview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Listview" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -33,18 +33,39 @@
                                     <action selector="addName" destination="BYZ-38-t0r" eventType="touchUpInside" id="9rm-oP-SG5"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QiQ-jS-XzJ">
+                                <rect key="frame" x="200" y="251" width="200" height="200"/>
+                                <color key="backgroundColor" red="1" green="0.1463115441659687" blue="0.18025408272771481" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="GW0-Ls-IAL"/>
+                                    <constraint firstAttribute="height" constant="200" id="aBm-rY-nWg"/>
+                                </constraints>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="dQ8-PO-eSU">
+                                <rect key="frame" x="281" y="464" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="4ug-VH-EGQ"/>
+                                    <constraint firstAttribute="width" constant="39" id="BNH-dq-zde"/>
+                                </constraints>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.90904186622596983" green="0.82394003196803944" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="dQ8-PO-eSU" firstAttribute="top" secondItem="QiQ-jS-XzJ" secondAttribute="bottom" constant="13" id="0GH-ng-11g"/>
                             <constraint firstItem="BHl-9A-C39" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GaM-0F-a4k"/>
                             <constraint firstItem="BHl-9A-C39" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="57" id="baj-sc-t67"/>
                             <constraint firstItem="9wb-4u-hYo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="byF-TQ-kGc"/>
                             <constraint firstItem="9wb-4u-hYo" firstAttribute="top" secondItem="BHl-9A-C39" secondAttribute="bottom" constant="32" id="coy-PC-Tuo"/>
+                            <constraint firstItem="dQ8-PO-eSU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gV1-wa-6x4"/>
+                            <constraint firstItem="QiQ-jS-XzJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iP2-ri-xxP"/>
+                            <constraint firstItem="QiQ-jS-XzJ" firstAttribute="top" secondItem="9wb-4u-hYo" secondAttribute="bottom" constant="38" id="xY6-Ya-uMv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bbk-HN-599"/>
                     <connections>
+                        <outlet property="imagesScroll" destination="QiQ-jS-XzJ" id="qg8-F6-1eP"/>
                         <outlet property="nameField" destination="BHl-9A-C39" id="8qX-et-r1s"/>
+                        <outlet property="pageControl" destination="dQ8-PO-eSU" id="Iz7-RS-OT8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
