@@ -17,6 +17,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let action = #selector(ViewController.showListView(_:))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next",
+                                                                 style: .Plain,
+                                                                 target: self,
+                                                                 action: action)
+        
         self.view.backgroundColor = UIColor.lightGrayColor()
         self.nameField.delegate = self
         
@@ -35,6 +42,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegat
 
         self.imagesScroll.contentSize = CGSize(width: 600, height: 0)
         self.imagesScroll.delegate = self
+    }
+    
+    func showListView(btn: UIBarButtonItem){
+        print("showListView")
+        
+        let listView = ListViewController()
+        listView.namesArray = self.namesArray
+        self.navigationController?.pushViewController(listView, animated: true)
         
     }
     
@@ -50,7 +65,6 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegat
         else { // last page
             self.pageControl.currentPage = 2
         }
-
     }
 
     
